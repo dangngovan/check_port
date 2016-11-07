@@ -8,7 +8,7 @@ fi
 
 #host=$1
 port=$1
-email="dangngovan@vccorp.vn"
+email="*******.vn"
 subject="Script result"
 for host in 192.168.49.1 192.168.49.2 
 do 
