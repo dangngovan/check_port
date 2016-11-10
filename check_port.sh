@@ -8,11 +8,11 @@ fi
 
 #host=$1
 port=$1
-email="*******.vn"
-subject="Script result"
-for host in 192.168.49.1 192.168.49.2 
+#email="dangngovan@cnht.vn"
+#subject="Script result"
+for host in 10.8.0.2 10.8.0.3 10.8.0.4 10.8.0.5 10.8.0.5
 do 
-if ping -q -c 4 $host >/dev/null
+if ping -q -c 1 $host >/dev/null
 then
 
 ping_result="OK"
@@ -21,7 +21,7 @@ ping_result="NOT OK"
 
 fi
 
-nc_result=`nc -z $host $port; echo $?`
+nc_result=`nc -z -w 3 $host $port; echo $?`
 
 if [ $nc_result != 0 ];
 then
